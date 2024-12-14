@@ -56,9 +56,9 @@ if isempty(K)
          0    0.6993         0         0
          0         0    0.6993         0
          0         0         0    0.3460];
-    Q = diag([2, 2, 2, 0.3, 1.0, 0.3, 2.5, 2.5, 2.5, 0.05, 0.05, 0.05]);
-    R = diag([0.05, 0.2, 0.2, 0.2]);  % Increase control input weights
-    K = lqrd(A, B, Q, R, 0.005);
+    Q = diag([5, 5, 5, 0.1, 0.5, 0.1, 2.5, 2.5, 2.5, 0.05, 0.05, 0.05]);
+    R = diag([0.01, 0.15, 0.15, 0.15]);
+    K = lqr_solver(A, B, Q, R)
 end
 
 u = -K*(x_current - x_desired);
