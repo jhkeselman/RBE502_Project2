@@ -8,8 +8,8 @@ function [xtraj, ttraj, terminate_cond] = test_trajectory(start, stop, map, path
 % vis   - true for displaying visualization
 
 %trajhandle    = @jump;
-%trajhandle    = @circle;
-trajhandle    = @diamond;
+trajhandle    = @circle;
+% trajhandle    = @diamond;
 
 %Controller and trajectory generator handles
 % controlhandle = @pid_controller;

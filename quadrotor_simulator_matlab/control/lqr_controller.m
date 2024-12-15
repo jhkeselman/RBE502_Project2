@@ -56,8 +56,8 @@ function [F, M, trpy, drpy] = lqr_controller(qd, t, qn, params, trajhandle)
          0         0     1/I22         0
          0         0         0    1/I33];
     
-    Q = diag([1.2,1.2,1.2,.1,.1,.1,1,1,1,.001,.001,.001]);
-    R = diag([0.005,1,1,1]);
+    Q = diag([1.2,1.5,1.2,.05,.05,.05,0.8,0.8,0.8,.001,.001,.001]);
+    R = diag([0.005,0.8,0.8,0.8]);
     K = lqr(A, B, Q, R);
     
     x_current = [pos; vel; euler; omega];
